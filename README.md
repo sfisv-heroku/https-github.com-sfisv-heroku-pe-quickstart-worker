@@ -6,7 +6,7 @@ This example is to demonstrate and serve as a quick start for how large-scale pr
 1. [Business org](https://github.com/sfisv-heroku/pe-quickstart-bizorg): A Salesforce application that keeps track of the activity happening in the Customer org and on Heroku
 1. [Customer org](https://github.com/sfisv-heroku/pe-quickstart-custorg): A Salesforce application that generates Platform Events
 1. [Listener](https://github.com/sfisv-heroku/pe-quickstart-listener): A Heroku application that consumes events and dispatches them to the worker
-1. [Worker](https://github.com/sfisv-heroku/pe-quickstart-worker) (this project): A Heroku application that receives work from the listener and performs processing on data retrieved from the Customer org
+1. [Worker](https://github.com/sfisv-heroku/pe-quickstart-worker) **(this project)**: A Heroku application that receives work from the listener and performs processing on data retrieved from the Customer org
 
 They must be configured in the listed order, due to dependencies (Customer Org and Listener dependent on Business Org and Worker dependent on Listener)
 
