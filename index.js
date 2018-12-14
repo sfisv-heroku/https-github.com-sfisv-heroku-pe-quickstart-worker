@@ -19,7 +19,7 @@ let jsforce = require('jsforce');
  * Setup environment variables, with defaults in case not present 
  */
 let PORT = process.env.PORT || 3000;
-let REDIS_URL = process.env.REDIS_URL || 'redis://h:pb1c2b65c1d3fb3854c15324b89283eafdc3d6906a20f52d3d9f7719d6066087f@ec2-35-172-83-87.compute-1.amazonaws.com:22489';
+let REDIS_URL = process.env.REDIS_URL;
 
 /**
  * Initialize redis
@@ -35,7 +35,7 @@ redisClient.on("error", function (err) {
  */
 //Here we are configuring express to use body-parser as middle-ware.
 let app = express();
-app.use(bodyParser.urlencoded({ extended:  true })); // false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.listen(PORT, () => console.log(`Express server listening on ${PORT}`));
 
@@ -82,7 +82,7 @@ app.post('/processEvent', function(req, res, next) {
 
   } else {
     // No event ID
-    console.log('Error: No Event Id provided.');
+    console.log('Error: No Event / Org Id provided.');
     displayString += 'Error: No Event Id provided';
   }
   res.send(displayString);
